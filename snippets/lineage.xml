@@ -43,7 +43,7 @@
   <project path="packages/apps/SetupWizard" remote="lineage" name="LineageOS/android_packages_apps_SetupWizard" />
   <project path="packages/apps/SimpleDeviceConfig" remote="lineage" name="LineageOS/android_packages_apps_SimpleDeviceConfig" />
   <project path="packages/apps/Snap" remote="lineage" name="LineageOS/android_packages_apps_Snap" />
-  <project path="packages/apps/Settings" name="android_packages_apps_Settings" remote="gearmask" />
+  <project path="packages/apps/Settings" name="android_packages_apps_Settings" remote="gearmask" revision="lineage-18.1" />
   <project path="packages/apps/Trebuchet" remote="lineage" name="LineageOS/android_packages_apps_Trebuchet" />
   <!--<project path="packages/apps/UnifiedEmail" remote="lineage" name="LineageOS/android_packages_apps_UnifiedEmail" />-->
   <project path="packages/apps/Updater" remote="lineage" name="LineageOS/android_packages_apps_Updater" />
@@ -52,7 +52,7 @@
   <project path="prebuilts/extract-tools" remote="lineage" name="LineageOS/android_prebuilts_extract-tools" clone-depth="1" />
   <project path="prebuilts/tools-lineage" remote="lineage" name="LineageOS/android_prebuilts_tools-lineage" clone-depth="1" />
   <project path="tools/extract-utils" remote="lineage" name="LineageOS/android_tools_extract-utils" />
-  <project path="vendor/lineage" remote="gearmask" name="LineageOS/android_vendor_lineage" />
+  <project path="vendor/lineage" remote="gearmask" name="LineageOS/android_vendor_lineage" revision="lineage-18.1" />
 
   <!-- CodeAurora additions -->
   <project path="device/qcom/sepolicy" remote="lineage" name="LineageOS/android_device_qcom_sepolicy" groups="qcom,pdk-qcom" />
