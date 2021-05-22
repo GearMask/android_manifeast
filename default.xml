@@ -22,7 +22,22 @@
            sync-c="true"
            sync-j="4" />
 
-  <project path="build/blueprint" remote="lineage" name="android_build_blueprint" groups="pdk,tradefed" />
+    <!-- AOSP Projects -->
+
+  <project path="build/make" remote="lineage" name="LineageOS/android_build" groups="pdk" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project path="build/blueprint" remote="lineage" name="LineageOS/android_build_blueprint" groups="pdk,tradefed" />
+  <project path="build/soong" remote="lineage" name="LineageOS/android_build_soong" groups="pdk,tradefed" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
   <project path="art" remote="lineage" name="android_art" groups="pdk" />
   <project path="bionic" remote="lineage" name="android_bionic" groups="pdk" />
   <project path="bootable/recovery" remote="lineage" name="android_bootable_recovery" groups="pdk" />
@@ -412,8 +427,8 @@
   <project path="external/zlib" name="platform/external/zlib" groups="pdk" remote="aosp" />
   <project path="external/zopfli" name="platform/external/zopfli" groups="pdk" remote="aosp" />
   <project path="external/zxing" name="platform/external/zxing" groups="pdk" remote="aosp" />
-  <!--project path="frameworks/av" remote="lineage" name="android_frameworks_av" groups="pdk" / -->
-  <!--project path="frameworks/base" remote="lineage" name="android_frameworks_base" groups="pdk-cw-fs,pdk-fs" /-->
+  <project path="frameworks/av" remote="lineage" name="android_frameworks_av" groups="pdk" / >
+  <project path="frameworks/base" remote="lineage" name="android_frameworks_base" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="pdk" remote="aosp" />
   <project path="frameworks/compile/mclinker" name="platform/frameworks/compile/mclinker" groups="pdk" remote="aosp" />
   <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" groups="pdk" remote="aosp" />
@@ -536,19 +551,19 @@
   <project path="packages/apps/Car/SystemUpdater" name="platform/packages/apps/Car/SystemUpdater" groups="pdk-fs" remote="aosp" />
   <project path="packages/apps/Car/libs" name="platform/packages/apps/Car/libs" groups="pdk-fs" remote="aosp" />
   <project path="packages/apps/Car/tests" name="platform/packages/apps/Car/tests" groups="pdk-fs" remote="aosp" />
-  <!--project path="packages/apps/CarrierConfig" remote="lineage" name="android_packages_apps_CarrierConfig" groups="pdk-cw-fs,pdk-fs" /-->
+  <project path="packages/apps/CarrierConfig" remote="lineage" name="android_packages_apps_CarrierConfig" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/apps/CellBroadcastReceiver" remote="lineage" name="android_packages_apps_CellBroadcastReceiver" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/apps/CertInstaller" remote="lineage" name="android_packages_apps_CertInstaller" groups="pdk-cw-fs,pdk-fs" />
-  <!--project path="packages/apps/Contacts" remote="lineage" name="android_packages_apps_Contacts" groups="pdk-fs" /-->
+  <project path="packages/apps/Contacts" remote="lineage" name="android_packages_apps_Contacts" groups="pdk-fs" />
   <project path="packages/apps/DeskClock" remote="lineage" name="android_packages_apps_DeskClock" groups="pdk-fs" />
-  <!--project path="packages/apps/Dialer" remote="lineage" name="android_packages_apps_Dialer" groups="pdk-fs" /-->
+  <project path="packages/apps/Dialer" remote="lineage" name="android_packages_apps_Dialer" groups="pdk-fs" />
   <project path="packages/apps/DocumentsUI" remote="lineage" name="android_packages_apps_DocumentsUI" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/apps/EmergencyInfo" remote="lineage" name="android_packages_apps_EmergencyInfo" groups="pdk-fs" />
   <project path="packages/apps/Gallery2" remote="lineage" name="android_packages_apps_Gallery2" groups="pdk-fs" />
   <project path="packages/apps/HTMLViewer" remote="lineage" name="android_packages_apps_HTMLViewer" groups="pdk-fs" />
   <project path="packages/apps/KeyChain" remote="lineage" name="android_packages_apps_KeyChain" groups="pdk-fs" />
   <project path="packages/apps/ManagedProvisioning" remote="lineage" name="android_packages_apps_ManagedProvisioning" groups="pdk-fs" />
-  <!--project path="packages/apps/Messaging" remote="lineage" name="android_packages_apps_Messaging" groups="pdk-fs" /-->
+  <project path="packages/apps/Messaging" remote="lineage" name="android_packages_apps_Messaging" groups="pdk-fs" />
   <project path="packages/apps/Nfc" remote="lineage" name="android_packages_apps_Nfc" groups="apps_nfc,pdk-fs" />
   <project path="packages/apps/OnDeviceAppPrediction" name="platform/packages/apps/OnDeviceAppPrediction" groups="pdk-fs" remote="aosp" />
   <project path="packages/apps/OneTimeInitializer" name="platform/packages/apps/OneTimeInitializer" groups="pdk-fs" remote="aosp" />
@@ -673,7 +688,7 @@
   <project path="system/chre" name="platform/system/chre" groups="pdk" remote="aosp" />
   <project path="system/connectivity/wificond" name="platform/system/connectivity/wificond" groups="pdk" remote="aosp" />
   <project path="system/connectivity/wifilogd" name="platform/system/connectivity/wifilogd" groups="pdk" remote="aosp" />
-  <!--project path="system/core" remote="lineage" name="android_system_core" groups="pdk" /-->
+  <project path="system/core" remote="lineage" name="android_system_core" groups="pdk" />
   <project path="system/extras" name="platform/system/extras" groups="pdk" remote="aosp" />
   <project path="system/gatekeeper" name="platform/system/gatekeeper" groups="pdk" remote="aosp" />
   <project path="system/gsid" name="platform/system/gsid" groups="pdk" remote="aosp" />
