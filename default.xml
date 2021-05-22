@@ -767,6 +767,6 @@
 
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
   
-  <include name="snippets/gearmask.xml" />
+  <!--  include name="snippets/gearmask.xml" /  -->
   
 </manifest>
